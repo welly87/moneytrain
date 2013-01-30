@@ -45,7 +45,6 @@ namespace MoneyTrain.FlazzQ
             if (message.StartsWith("Enqueue"))
             {
                 string[] parts = message.Split(':');
-                //EnqueueMessageToQueue(parts[1], parts[2]);
                 string pubMessage = string.Format("{0}:{1}", parts[1], parts[2]);
 
                 _dequeueReceiver.Send(pubMessage, Encoding.Unicode);
@@ -53,42 +52,8 @@ namespace MoneyTrain.FlazzQ
                 _commandReceiver.Send("Success", Encoding.Unicode);
             }
 
-            //if (message.StartsWith("CreateEndpoint"))
-            //{
-            //    string[] parts = message.Split(':');
-            //    CreateQueueIfNotExists(parts[1]);
-
-            //    _commandReceiver.Send("Success", Encoding.Unicode);
-            //}
-
-            //else if (message.StartsWith("Dequeue"))
-            //{
-            //    string[] parts = message.Split(':');
-
-            //    _commandReceiver.Send(DequeueMessages(parts[1]), Encoding.Unicode);
-            //}
             Console.WriteLine(message);
         }
-
-        //private string DequeueMessages(string queue)
-        //{
-        //    // should loop all messages, not just one
-        //    return _messageQueues[queue].Dequeue();
-        //}
-
-        //private void EnqueueMessageToQueue(string queue, string message)
-        //{
-        //    // check if the message is local or another server
-        //    _messageQueues[queue].Enqueue(message);
-        //}
-
-        //private void CreateQueueIfNotExists(string queue)
-        //{
-        //    if (queue == null) return;
-
-        //    Console.WriteLine("Create Queue : " + queue);
-        //    _messageQueues.TryAdd(queue, new MessageQueue());
-        //}
 
         public void Stop()
         {
@@ -96,10 +61,5 @@ namespace MoneyTrain.FlazzQ
             _commandReceiver.Close();
             _context.Dispose();
         }
-
-        //public void CreateQueue(string queue)
-        //{
-        //    CreateQueueIfNotExists(queue);
-        //}
     }
 }
