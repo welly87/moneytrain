@@ -37,7 +37,6 @@ namespace MoneyTrain.Buzz
         public void Start()
         {
             _context = ZmqContext.Create();
-            //CreateEndpointIfNotExists();
             ListenToMessageFromQueue();
         }
 
@@ -61,8 +60,6 @@ namespace MoneyTrain.Buzz
                     while (_running)
                     {
                         string messages = DequeueMessages();
-
-                        //if (messages.Count == 0) continue;
 
                         ProcessMessage(messages);
                         //Thread.Sleep(10);
@@ -104,11 +101,6 @@ namespace MoneyTrain.Buzz
         {
             return raw.Substring(_endpointName.Length + 1);
         }
-
-        //private void CreateEndpointIfNotExists()
-        //{
-        //    SendMessageToMq("CreateEndpoint:" + _endpointName);
-        //}
 
         public void Publish(IEvent @event)
         {
