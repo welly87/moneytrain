@@ -18,7 +18,6 @@ namespace MoneyTrain.FlazzQ
             _queue.TryDequeue(out result);
 
             return result ?? string.Empty;
-            //return _queue.TryDequeue()
         }
     }
 }
