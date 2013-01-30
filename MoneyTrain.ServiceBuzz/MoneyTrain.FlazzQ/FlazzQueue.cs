@@ -7,9 +7,6 @@ namespace MoneyTrain.FlazzQ
 {
     public class FlazzQueue
     {
-        //private readonly ConcurrentDictionary<string, MessageQueue> _messageQueues =
-        //    new ConcurrentDictionary<string, MessageQueue>();
-
         private ZmqSocket _commandReceiver;
         private ZmqContext _context;
         private ZmqSocket _dequeueReceiver;
