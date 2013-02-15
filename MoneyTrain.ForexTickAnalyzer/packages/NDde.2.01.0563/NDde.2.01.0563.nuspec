@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>NDde</id>
+    <version>2.01.0563</version>
+    <title>.NET Library for Dynamic Data Exchange (DDE)</title>
+    <authors>tambunanw</authors>
+    <owners>tambunanw</owners>
+    <licenseUrl>http://ndde.codeplex.com/license</licenseUrl>
+    <projectUrl>http://ndde.codeplex.com/</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>My package description.</description>
+    <summary>Shared Source License for NDde
+
+This license governs use of the accompanying software ('Software'), and your use of the Software constitutes acceptance of this license.
+
+You may use the Software f</summary>
+    <references>
+      <reference file="NDde.dll" />
+    </references>
+  </metadata>
+</package>
